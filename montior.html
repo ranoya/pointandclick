@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <style>
+      body,
+      html {
+        background-color: transparent;
+        overflow: hidden;
+        margin: 0;
+        padding: 0;
+      }
+
+      #wrap {
+        position: fixed;
+        z-index: 3;
+        left: 0;
+        bottom: 0;
+        /* width: 100%; */
+        width: min(100%, calc((100vh / 3.3) * 4));
+        aspect-ratio: 4 / 3.3;
+        background-repeat: no-repeat;
+        background-position: top left;
+        background-size: min(100%, calc((100vh / 3.3) * 4));
+        background-image: url(./BordaMonitor3.png);
+        max-height: 100vh;
+      }
+
+      #content {
+        position: fixed;
+        z-index: 2;
+        left: min(7%, ((0.07) * (100vh / 3.3) * 4));
+        bottom: min(17.1vh, (0.171) * (100vw * 3.3) / 4);
+        width: min(86.7%, calc((100vh / 3.3) * 3.466));
+        aspect-ratio: 4 / 3;
+        max-height: 100vh;
+        background-color: black;
+      }
+
+      #insere {
+        position: fixed;
+        z-index: 9;
+        left: min(8%, ((0.08) * (100vh / 3.3) * 4));
+        bottom: min(18.4vh, (0.184) * (100vw * 3.3) / 4);
+        width: min(83%, calc((100vh / 3.3) * 3.35));
+        aspect-ratio: 4 / 2.8;
+        max-height: 100vh;
+      }
+
+      #insere iframe {
+        width: 100%;
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="insere">
+      <iframe
+        allowfullscreen="allowfullscreen"
+        mozallowfullscreen="mozallowfullscreen"
+        msallowfullscreen="msallowfullscreen"
+        oallowfullscreen="oallowfullscreen"
+        webkitallowfullscreen="webkitallowfullscreen"
+        allowfullscreen
+        frameborder="0"
+        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; fullscreen"
+        src="https://dos.zone/player/?bundleUrl=https%3A%2F%2Fcdn.dos.zone%2Fcustom%2Fdos%2Fspace-quest-chapter-i-the-sarien-encounter.jsdos?anonymous=1"
+      ></iframe>
+
+      <!--
+
+        COLOSSAL CAVE ORIGINAL: https://dos.zone/player/?bundleUrl=https://cdn.dos.zone/custom/dos/classic-adventure-the-original-colossal-cave.jsdos?anonymous=1
+      <iframe
+        frameborder="0"
+        src="https://dos.zone/player/?bundleUrl=https%3A%2F%2Fcdn.dos.zone%2Fcustom%2Fdos%2Fcolossal-cave-revisited.jsdos?anonymous=1"
+      ></iframe>
+      -->
+    </div>
+    <div id="wrap"></div>
+    <div id="content"></div>
+  </body>
+
+  <script>
+    // FUNÇÃO URL GET
+    // urlGet('xpto'); www.site.com/?xpto=teste
+    // let data = $_GET['xpto']; www.site.com/?xpto=teste
+
+    $_GET = [];
+    (function () {
+      corte = window.location.href.toString().indexOf("?");
+      if (corte > 0) {
+        argumento = window.location.href.toString().substring(corte + 1);
+        argumentos = argumento.split("&");
+        for (arg in argumentos) {
+          let argCorte = argumentos[arg].indexOf("=");
+          $_GET[argumentos[arg].substring(0, argCorte)] = argumentos[
+            arg
+          ].substring(argCorte + 1);
+        }
+      }
+    })();
+
+    if (
+      typeof $_GET["rom"] != "undefined" &&
+      $_GET["rom"] != null &&
+      $_GET["rom"] != ""
+    ) {
+      document.getElementById("insere").innerHTML = `
+        
+        <iframe
+        allowfullscreen="allowfullscreen"
+        mozallowfullscreen="mozallowfullscreen"
+        msallowfullscreen="msallowfullscreen"
+        oallowfullscreen="oallowfullscreen"
+        webkitallowfullscreen="webkitallowfullscreen"
+        allowfullscreen
+        frameborder="0"
+        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; fullscreen"
+        src="${$_GET["rom"]}"
+      ></iframe>
+      
+      `;
+    }
+  </script>
+</html>
