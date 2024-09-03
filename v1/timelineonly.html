@@ -1213,6 +1213,23 @@ startfixingthings();
         tag.setAttribute("href", $_GET["temptheme"] + "timelinetheme.css");
         document.getElementsByTagName("head")[0].appendChild(tag);
       }
+
+      // Atualiza dados dos inputs
+      const atualizainput = function (arg, inputnumber) {
+        let inpt = document.getElementsByTagName("input")[inputnumber];
+        inpt.value = arg;
+        inpt.dispatchEvent(new Event("input", { bubbles: true }));
+      };
+
+      if (
+        typeof $_GET["filtra"] != "undefined" &&
+        $_GET["filtra"] != null &&
+        $_GET["filtra"] != ""
+      ) {
+        setTimeout(function () {
+          atualizainput($_GET["filtra"], 0);
+        }, 1500);
+      }
     </script>
   </body>
 </html>
