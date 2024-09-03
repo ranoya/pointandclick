@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Silkscreen:wght@400;700&display=swap');
+
+@font-face {
+            font-family: 'DotGothic16';
+            src: url('./ModernDOS8x16.ttf');
+        }
+
+:root {
+    --timeline-font: Helvetica;
+    --meta-font: 'DotGothic16';
+    --timeline-text-color: #FFFFFF;
+    /* --timeline-text-highlight: #05556b; */
+    --timeline-text-highlight: #072c37;
+    --timeline-text-over: #FF55FF;
+    /* --base-background: #0dc2f2; */
+    --base-background: transparent;
+    --timeline-points: #072c37;
+    --littlemenu-color: #FFFFFF;
+    --littlemenu-over: #072c37;
+    --pagination-color: #FFFFFF;
+    --slidetopic-color: #072c37;
+    --meta-margins: 0;
+}
+
+@media screen and (max-width: 400px) {
+    #loslinks {
+        display: none;
+    }
+}
+
+.bignav {
+    background-image: url(https://drive.google.com/uc?export=view&id=1Bh1xJpj9jMX-Mnj3Y4zkgirIY7FecZ-P);
+}

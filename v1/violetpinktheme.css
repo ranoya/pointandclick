@@ -1,0 +1,27 @@
+html,
+body {
+    background-color: #40124D;
+}
+
+:root {
+
+    --bg-color: #40124D;
+    --text-color: white;
+    --detail-link: #d098b4;
+    --card-link: #a3a3a3;
+    --card-link-hover: #FF1499;
+    --ultra-detail-link: white;
+    --yearlinemark: #9008b6;
+    --linemark: #651f79;
+
+}
+
+.headcolor {
+    background-color: #FF1499;
+     !important;
+}
+
+.pncupcleancut {
+    background-color: #40124D;
+     !important;
+}

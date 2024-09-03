@@ -1,0 +1,15 @@
+ :root {
+     --viz-corB: #debe34;
+     --viz-corA: #cfb232;
+     --lightgrey: #e2e2e2;
+     --darkgrey: #979797;
+     --hover--icon: #ffd000;
+     --all-dark: #b09933;
+
+     --md-bg: #debe34;
+     --md-fg: white;
+     --md-h1: #e2e2e2;
+     --md-mark: #979797;
+     --md-highlight: #762678;
+
+ }
