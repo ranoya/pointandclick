@@ -1227,7 +1227,7 @@ startfixingthings();
         $_GET["filtra"] != ""
       ) {
         setTimeout(function () {
-          atualizainput($_GET["filtra"], 0);
+          atualizainput(decodeURI($_GET["filtra"]), 0);
         }, 1500);
       }
     </script>
