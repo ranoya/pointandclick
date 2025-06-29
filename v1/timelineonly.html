@@ -1042,6 +1042,8 @@
         </g>
       </svg>
 
+      <div id="shadowfiltros" style="display: none"></div>
+
       <div id="logofoottext">
         COPYRIGHT &copy; 2022<br />PROF. DR. GUILHERME RANOYA
       </div>
@@ -1054,6 +1056,8 @@
       } from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
       import define from "https://api.observablehq.com/@ranoya/point-click-adventures.js?v=3";
       new Runtime().module(define, (name) => {
+        if (name === "viewof shadowfiltros")
+          return new Inspector(document.querySelector("#shadowfiltros"));
         if (name === "viewof filtros")
           return new Inspector(
             document.querySelector("#observablehq-viewof-filtros-0ac78f84")
@@ -1227,6 +1231,16 @@ startfixingthings();
         inpt.value = arg;
         inpt.dispatchEvent(new Event("input", { bubbles: true }));
       };
+
+      if (
+        typeof $_GET["shadow"] != "undefined" &&
+        $_GET["shadow"] != null &&
+        $_GET["shadow"] != ""
+      ) {
+        setTimeout(function () {
+          atualizainput(decodeURI($_GET["shadow"]), 1);
+        }, 1500);
+      }
 
       if (
         typeof $_GET["filtra"] != "undefined" &&
