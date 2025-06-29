@@ -502,7 +502,7 @@
         background-size: cover;
         display: inline-block;
         min-height: 160px;
-        height: 35vh;
+        aspect-ratio: 16/9;
         border: 5px solid transparent;
       }
 
@@ -803,6 +803,9 @@
 
       #bigpainel {
         color: var(--md-bg, #0dc2f2);
+        min-width: 60vw;
+        min-height: 55dvh;
+        overflow-y: auto;
       }
 
       .nullfield {
@@ -870,6 +873,10 @@
         .espacopainelsticky,
         .painelsingle {
           width: calc(100vw - 91px) !important;
+        }
+
+        .painelsingle {
+          width: calc(100% - 20px) !important;
         }
 
         .blocodivididoinvert {

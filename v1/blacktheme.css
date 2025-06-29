@@ -1,0 +1,15 @@
+html,
+body {
+  background-color: #000000;
+}
+
+:root {
+  --bg-color: #000000;
+  --text-color: white;
+  --detail-link: #d098b4;
+  --card-link: #a3a3a3;
+  --card-link-hover: #ad859c;
+  --ultra-detail-link: white;
+  --yearlinemark: #706574;
+  --linemark: #4b4a4b;
+}
