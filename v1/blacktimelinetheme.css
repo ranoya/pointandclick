@@ -1,15 +1,14 @@
-html,
-body {
-  background-color: #000000;
-}
-
 :root {
-  --bg-color: #000000;
-  --text-color: white;
-  --detail-link: #d098b4;
-  --card-link: #a3a3a3;
-  --card-link-hover: #ad859c;
-  --ultra-detail-link: white;
-  --yearlinemark: #706574;
-  --linemark: #4b4a4b;
+  --viz-corB: #1b1b1b;
+  --viz-corA: #1a1917;
+  --lightgrey: #e2e2e2;
+  --darkgrey: #979797;
+  --hover--icon: #504c39;
+  --all-dark: #474229;
+
+  --md-bg: #000000;
+  --md-fg: white;
+  --md-h1: #e2e2e2;
+  --md-mark: #979797;
+  --md-highlight: #997faa;
 }
