@@ -135,6 +135,21 @@
         --md-highlight: #ff55ff;
       }
 
+      ::-webkit-scrollbar {
+        width: 12px;
+        height: 12px;
+        background-color: var(--md-bg);
+        color: var(--md-bg);
+      }
+
+      ::-webkit-scrollbar-thumb:horizontal {
+        border-right: 8px solid var(--md-fg);
+      }
+
+      ::-webkit-scrollbar-thumb:horizontal {
+        border-bottom: 8px solid var(--md-fg);
+      }
+
       ::placeholder {
         color: var(--darkgrey, #05556b);
       }
@@ -318,6 +333,7 @@
         font-size: 14px;
         line-height: 40px;
         height: 40px;
+        font-family: Helvetica, Arial, sans-serif;
       }
 
       #observablehq-viewof-filtros-0ac78f84 form div.oi-ec050e-input {
