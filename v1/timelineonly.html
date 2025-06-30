@@ -1272,14 +1272,8 @@ startfixingthings();
             typeof document.getElementsByTagName("input")[0] != "undefined" &&
             document.getElementsByTagName("input")[0] != null
           ) {
-            if (
-              document
-                .getElementsByTagName("input")[1]
-                .innerHTML.match(/input/i)
-            ) {
-              clearInterval(insiste);
-              atualizainput(decodeURI($_GET["shadow"]), 1);
-            }
+            clearInterval(insiste);
+            atualizainput(decodeURI($_GET["shadow"]), 1);
           }
         }, 10);
       }
@@ -1294,14 +1288,8 @@ startfixingthings();
             typeof document.getElementsByTagName("input")[0] != "undefined" &&
             document.getElementsByTagName("input")[0] != null
           ) {
-            if (
-              document
-                .getElementsByTagName("input")[0]
-                .innerHTML.match(/input/i)
-            ) {
-              clearInterval(insiste2);
-              atualizainput(decodeURI($_GET["filtra"]), 0);
-            }
+            clearInterval(insiste2);
+            atualizainput(decodeURI($_GET["filtra"]), 0);
           }
         }, 10);
       }
