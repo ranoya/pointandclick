@@ -1045,7 +1045,10 @@
 
     <div id="observablehq-viz-0ac78f84"></div>
 
-    <div style="margin-left: 20px; margin-top: 60px; margin-bottom: 40px">
+    <div
+      id="rodape"
+      style="margin-left: 20px; margin-top: 60px; margin-bottom: 40px"
+    >
       <svg
         id="logofoot"
         viewBox="0 0 719 719"
@@ -1069,12 +1072,12 @@
         </g>
       </svg>
 
-      <div id="shadowfiltros" style="display: none"></div>
-
       <div id="logofoottext">
         COPYRIGHT &copy; 2022<br />PROF. DR. GUILHERME RANOYA
       </div>
     </div>
+
+    <div id="shadowfiltros" style="display: none"></div>
 
     <script type="module">
       import {
@@ -1264,9 +1267,12 @@ startfixingthings();
         $_GET["shadow"] != null &&
         $_GET["shadow"] != ""
       ) {
-        setTimeout(function () {
-          atualizainput(decodeURI($_GET["shadow"]), 1);
-        }, 2500);
+        let insiste = setInterval(function () {
+          if (document.getElementsByTagName(1).innerHTML.match(/input/i)) {
+            clearInterval(insiste);
+            atualizainput(decodeURI($_GET["shadow"]), 1);
+          }
+        }, 10);
       }
 
       if (
@@ -1274,9 +1280,22 @@ startfixingthings();
         $_GET["filtra"] != null &&
         $_GET["filtra"] != ""
       ) {
-        setTimeout(function () {
-          atualizainput(decodeURI($_GET["filtra"]), 0);
-        }, 2500);
+        let insiste2 = setInterval(function () {
+          if (document.getElementsByTagName(0).innerHTML.match(/input/i)) {
+            clearInterval(insiste2);
+            atualizainput(decodeURI($_GET["filtra"]), 0);
+          }
+        }, 10);
+      }
+
+      if (
+        typeof $_GET["contentonly"] != "undefined" &&
+        $_GET["contentonly"] != null &&
+        $_GET["contentonly"] != ""
+      ) {
+        document.getElementById("logofoot").style.display = "none";
+        document.getElementById("logofoottext").style.display = "none";
+        document.getElementById("rodape").style.display = "none";
       }
     </script>
   </body>
