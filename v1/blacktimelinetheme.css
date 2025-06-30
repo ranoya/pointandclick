@@ -3,12 +3,16 @@
   --viz-corA: #1a1917;
   --lightgrey: #e2e2e2;
   --darkgrey: #979797;
-  --hover--icon: #504c39;
+  --hover--icon: #c1c9e5;
   --all-dark: #474229;
 
   --md-bg: #000000;
-  --md-fg: white;
+  --md-fg: #adadad;
   --md-h1: #e2e2e2;
-  --md-mark: #979797;
+  --md-mark: #ffffff;
   --md-highlight: #948d99;
+}
+
+.celulaindividual {
+  border-left: 1px dashed #ffffff22;
 }
