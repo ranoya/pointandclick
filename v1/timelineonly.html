@@ -1268,7 +1268,9 @@ startfixingthings();
         $_GET["shadow"] != ""
       ) {
         let insiste = setInterval(function () {
-          if (document.getElementsByTagName(1).innerHTML.match(/input/i)) {
+          if (
+            document.getElementsByTagName("input")[1].innerHTML.match(/input/i)
+          ) {
             clearInterval(insiste);
             atualizainput(decodeURI($_GET["shadow"]), 1);
           }
@@ -1281,7 +1283,9 @@ startfixingthings();
         $_GET["filtra"] != ""
       ) {
         let insiste2 = setInterval(function () {
-          if (document.getElementsByTagName(0).innerHTML.match(/input/i)) {
+          if (
+            document.getElementsByTagName("input")[0].innerHTML.match(/input/i)
+          ) {
             clearInterval(insiste2);
             atualizainput(decodeURI($_GET["filtra"]), 0);
           }
