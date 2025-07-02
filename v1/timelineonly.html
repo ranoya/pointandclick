@@ -136,6 +136,7 @@
         --md-highlight: #ff55ff;
         --topo-regua: 80px;
         --topo-bigpanel: 0px;
+        --inputs-height: 80px;
       }
 
       ::-webkit-scrollbar {
@@ -269,8 +270,7 @@
         display: grid;
         grid-template-columns: 1fr 1fr;
         background-color: var(--md-bg, #ffffff);
-        height: 80px;
-        height: 80px;
+        height: var(--inputs-height, 80px);
         width: 100vw;
         font-family: Helvetica, Arial, sans-serif;
       }
@@ -1329,9 +1329,10 @@ startfixingthings();
           ) {
             clearInterval(insiste);
 
-            document.getElementById("vizinputs").style.height =
-              "50px !important";
-
+            document.documentElement.style.setProperty(
+              "--inputs-height",
+              "50px"
+            );
             document.documentElement.style.setProperty("--topo-regua", "50px");
             document.documentElement.style.setProperty(
               "--topo-bigpanel",
