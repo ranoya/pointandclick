@@ -1321,7 +1321,7 @@ startfixingthings();
             document.getElementsByTagName("select")[0].value = $_GET["tipo"];
             document
               .getElementsByTagName("select")[0]
-              .dispatchEvent(new Event("select", { bubbles: true }));
+              .dispatchEvent(new Event("input", { bubbles: true }));
           }
         }, 10);
       }
