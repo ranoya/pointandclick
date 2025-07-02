@@ -134,6 +134,8 @@
         --md-h1: #ffe3f1;
         --md-mark: #05556b;
         --md-highlight: #ff55ff;
+        --topo-regua: 80px;
+        --topo-bigpanel: 0px;
       }
 
       ::-webkit-scrollbar {
@@ -699,7 +701,7 @@
       .matriztempoanos {
         height: 90px;
         position: sticky;
-        top: 80px;
+        top: var(--topo-regua, 80px);
         z-index: 70;
       }
 
@@ -834,6 +836,7 @@
         min-width: 60vw;
         min-height: 45dvh;
         overflow-y: auto;
+        margin-top: var(--topo-bigpanel, 0px);
       }
 
       .nullfield {
@@ -1296,13 +1299,50 @@ startfixingthings();
       }
 
       if (
+        typeof $_GET["tipo"] != "undefined" &&
+        $_GET["tipo"] != null &&
+        $_GET["tipo"] != ""
+      ) {
+        let insiste4 = setInterval(function () {
+          if (
+            typeof document.getElementsByTagName("select")[0] != "undefined" &&
+            document.getElementsByTagName("select")[0] != null
+          ) {
+            clearInterval(insiste4);
+            document.getElementsByTagName("select")[0].value = $_GET["tipo"];
+            document
+              .getElementsByTagName("select")[0]
+              .dispatchEvent(new Event("select", { bubbles: true }));
+          }
+        }, 10);
+      }
+
+      if (
         typeof $_GET["contentonly"] != "undefined" &&
         $_GET["contentonly"] != null &&
         $_GET["contentonly"] != ""
       ) {
-        document.getElementById("logofoot").style.display = "none";
-        document.getElementById("logofoottext").style.display = "none";
-        document.getElementById("rodape").style.display = "none";
+        let insiste = setInterval(function () {
+          if (
+            typeof document.getElementsByTagName("input")[0] != "undefined" &&
+            document.getElementsByTagName("input")[0] != null
+          ) {
+            clearInterval(insiste);
+
+            document.getElementById("vizinputs").style.height =
+              "50px !important";
+
+            document.documentElement.style.setProperty("--topo-regua", "50px");
+            document.documentElement.style.setProperty(
+              "--topo-bigpanel",
+              "-100px"
+            );
+
+            document.getElementById("logofoot").style.display = "none";
+            document.getElementById("logofoottext").style.display = "none";
+            document.getElementById("rodape").style.display = "none";
+          }
+        }, 10);
       }
     </script>
   </body>
